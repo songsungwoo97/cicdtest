@@ -1,0 +1,9 @@
+external-api:
+  url: "https://api.thecatapi.com/v1"
+  apiKey: "live_Ly9edMxc62JAPvhShfEg4d66JJ4f27gqaigkrTnOVWv5qhBG6Al9l9bMoxrhUSk8"
+
+spring:
+  thymeleaf:
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html

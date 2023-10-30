@@ -34,6 +34,7 @@ public class CatphotoService implements CatService {
         URI uri = UriComponentsBuilder
                 .fromUriString(apiUrl)
                 .path("/images/search")
+                .queryParam("api_key", apiKey)
                 .queryParam("limit", imageNumber)
                 .encode()
                 .build()

@@ -26,6 +26,11 @@ public class CatController {
 //        return catService.getCatImages(imageNumber);
 //    }
 
+    @GetMapping("/")
+    public String getCatImages() {
+        return "catImages";
+    }
+
     @GetMapping("/catImages")
     public String getCatImages(@RequestParam int imageNumber, Model model) {
         List<CatImage> catImages = catService.getCatImages(imageNumber);

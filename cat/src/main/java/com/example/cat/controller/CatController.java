@@ -6,10 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,7 +31,16 @@ public class CatController {
     @GetMapping("/catImages")
     public String getCatImages(@RequestParam int imageNumber, Model model) {
         List<CatImage> catImages = catService.getCatImages(imageNumber);
-        model.addAttribute("catImages", catImages);
+        log.info("catImages : " + catImages);
+        model.addAttribute("catImages", catImages.get(0));
         return "catImages";
+    }
+
+    @PostMapping("/collection")
+    public String getCollection(@RequestBody List<CatImage> collection, Model model) {
+
+        model.addAttribute("collection", collection);
+
+        return "collection";
     }
 }

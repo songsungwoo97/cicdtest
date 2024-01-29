@@ -1,0 +1,25 @@
+<!--
+<configuration>
+    &lt;!&ndash; Other configurations &ndash;&gt;
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/logback.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            &lt;!&ndash; Daily rollover &ndash;&gt;
+            <fileNamePattern>./logs/logback-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            &lt;!&ndash; Keep 30 days of history &ndash;&gt;
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    &lt;!&ndash; Other configurations &ndash;&gt;
+
+    <root level="info">
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>-->

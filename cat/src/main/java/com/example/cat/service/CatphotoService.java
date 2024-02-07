@@ -44,7 +44,7 @@ public class CatphotoService implements CatService {
                 .uri(uri)
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<>() {
-                });
+				});
 
         List<CatImage> catImages = result.block();
 

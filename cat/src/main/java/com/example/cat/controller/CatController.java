@@ -13,35 +13,17 @@ import java.util.List;
 
 //@RestController
 @Slf4j
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class CatController {
 
     final private CatphotoService catService;
 
-//    @GetMapping("/images")
-//    public List<CatImage> getImages(@RequestParam Long imageNumber){
-//        return catService.getCatImages(imageNumber);
-//    }
-
-    @GetMapping("/")
-    public String getCatImages() {
-        return "catImages";
-    }
-
-    @GetMapping("/catImages")
-    public String getCatImages(@RequestParam int imageNumber, Model model) {
+    @GetMapping("/catImages/{imageNumber}")
+    public List<CatImage> getCatImages(@PathVariable("imageNumber") int imageNumber) {
         List<CatImage> catImages = catService.getCatImages(imageNumber);
         log.info("catImages : " + catImages);
-        model.addAttribute("catImages", catImages.get(0));
-        return "catImages";
+        return catImages;
     }
 
-    @PostMapping("/collection")
-    public String getCollection(@RequestBody List<CatImage> collection, Model model) {
-
-        model.addAttribute("collection", collection);
-
-        return "collection";
-    }
 }

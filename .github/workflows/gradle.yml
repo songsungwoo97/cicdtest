@@ -46,5 +46,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Change diractory
+      run: cd cat
+
     - name: Generate and submit dependency graph
       uses: gradle/actions/dependency-submission@ec92e829475ac0c2315ea8f9eced72db85bb337a # v3.0.0

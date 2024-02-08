@@ -27,7 +27,9 @@ jobs:
         gradle-version: '8.3' # Gradle 버전 명시
 
     - name: Build with Gradle Wrapper
-      run: ./gradlew build
+      run: | 
+        cd cat
+        ./gradlew build
 
   dependency-submission:
 

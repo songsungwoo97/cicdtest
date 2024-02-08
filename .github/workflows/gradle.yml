@@ -29,6 +29,7 @@ jobs:
     - name: Build with Gradle Wrapper
       run: | 
         cd cat
+        chmod +x ./gradlew
         ./gradlew build
 
   dependency-submission:
